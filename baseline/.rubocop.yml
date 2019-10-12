@@ -1,0 +1,56 @@
+AllCops:
+  TargetRubyVersion: 2.6.4
+  Exclude:
+    - 'node_modules/**/*'
+    - 'vendor/**/*'
+    - 'bin/bundle'
+    - 'db/seeds.rb'
+    - 'db/schema.rb'
+    - 'db/migrate/0*.rb'
+
+Metrics/LineLength:
+  Max: 200
+Metrics/AbcSize:
+  Max: 200
+Metrics/BlockLength:
+  Max: 200
+Metrics/MethodLength:
+  Max: 200
+Metrics/ClassLength:
+  Max: 200
+Style/Documentation:
+  Enabled: false
+Style/ClassAndModuleChildren:
+  Enabled: false
+Style/FrozenStringLiteralComment:
+  Enabled: false
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: consistent_comma
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: consistent_comma
+Style/TrailingCommaInArguments:
+  EnforcedStyleForMultiline: consistent_comma
+Layout/EmptyLineAfterGuardClause:
+  Enabled: false
+Style/WhileUntilModifier:
+  Enabled: false
+Layout/AlignArguments:
+  Enabled: false
+Style/SymbolArray:
+  Enabled: false
+Layout/IndentFirstArrayElement:
+  Enabled: false
+Style/IfUnlessModifier:
+  Enabled: false
+Style/RescueStandardError:
+  Enabled: false
+Style/GuardClause:
+  Enabled: false
+Naming/UncommunicativeMethodParamName:
+  Enabled: false
+Layout/IndentFirstHashElement:
+  Enabled: false
+Layout/MultilineMethodCallIndentation:
+  Enabled: false
+Metrics/ParameterLists:
+  Max: 10

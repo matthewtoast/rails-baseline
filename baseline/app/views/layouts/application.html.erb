@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= application_title %></title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <link
+      rel='stylesheet'
+      href='https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css'
+      integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T'
+      crossorigin='anonymous'
+    />
+
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+
+    <script>
+      window.app = {};
+      <% if user_signed_in? %>
+        window.app.user = <%= raw current_user.to_json %>;
+      <% end %>
+      console.info(window.app);
+    </script>
+
+    <%= javascript_pack_tag 'application' %>
+  </head>
+  <body>
+    <%= yield %>
+  </body>
+</html>
