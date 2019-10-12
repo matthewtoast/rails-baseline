@@ -3,7 +3,9 @@ AllCops:
   Exclude:
     - 'node_modules/**/*'
     - 'vendor/**/*'
-    - 'bin/bundle'
+    - 'bin/**/*'
+    - 'config/puma.rb'
+    - 'config/spring.rb'
     - 'db/seeds.rb'
     - 'db/schema.rb'
     - 'db/migrate/0*.rb'

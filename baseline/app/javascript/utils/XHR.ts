@@ -21,7 +21,7 @@ export const post = (uri, data, cb): void => {
     }
 
     if (!response || response.statusCode > 399) {
-      cb(new Error(`Request failed`));
+      cb(new Error('Request failed'));
       return;
     }
 

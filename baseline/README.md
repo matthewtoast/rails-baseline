@@ -20,7 +20,7 @@ $ bundle
 $ brew services start postgres
 $ rails db:setup
 $ rails db:migrate
-$ RAILS_ENV=production bundle exec rails assets:precompile # 
+$ RAILS_ENV=production bundle exec rails assets:precompile
 $ rails s
 $ yarn verify
 ```
