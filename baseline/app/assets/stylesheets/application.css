@@ -19,9 +19,19 @@ body, html {
   width: 100%;
   padding: 0;
   margin: 0;
+
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
   font-weight: 300;
-  font-size: 12px;
+  font-size: 16px;
+
+  background-color: black;
+  color: white;
+}
+
+a:hover,
+a:active,
+a:visited {
+  color: white;
 }
 
 strong {
@@ -36,4 +46,19 @@ textarea:focus,
 select:focus,
 button:focus {
   outline: none;
+}
+
+.node-enter {
+  opacity: 0;
+}
+.node-enter-active {
+  opacity: 1;
+  transition: opacity 200ms ease-in;
+}
+.node-exit {
+  opacity: 1;
+}
+.node-exit-active {
+  opacity: 0;
+  transition: opacity 200ms ease-in;
 }

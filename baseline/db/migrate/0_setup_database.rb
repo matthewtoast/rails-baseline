@@ -49,6 +49,9 @@ class SetupDatabase < ActiveRecord::Migration[6.0]
     create_table "users", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
       t.string "email", null: false
       t.uuid "role_id", null: false
+      t.string "given_name", null: false
+      t.string "family_name", null: false
+      t.string "slug"
       t.datetime "created_at", precision: 6, null: false
       t.datetime "updated_at", precision: 6, null: false
       t.index ["email"], name: "index_users_on_email", unique: true

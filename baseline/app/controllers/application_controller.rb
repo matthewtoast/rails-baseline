@@ -16,6 +16,14 @@ class ApplicationController < ActionController::Base
     render_unauthorized
   end
 
+  def page_param
+    params[:page] || 1
+  end
+
+  def per_param
+    [params[:per] || 25, 25].min
+  end
+
   protected
 
   def render_unauthorized
