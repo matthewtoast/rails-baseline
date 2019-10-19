@@ -6,7 +6,9 @@ Files and folders with the initial customizations I always do after generating a
 
 You can use rsync to merge files in this project into a target Rails project.
 
-  $ rsync -iazP /path/to/rails-baseline/baseline/ /path/to/rails/project/
+```
+$ rsync -iazP /path/to/rails-baseline/baseline/ /path/to/rails/project/
+```
 
 Before you run rsync, I **strongly** recommend you `git commit` your target Rails project, so you can roll back.
 
