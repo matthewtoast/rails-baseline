@@ -9,9 +9,7 @@ export const esser = (
   return `${num} ${plural}`;
 };
 
-export const possesser: string = (
-  name: string,
-): string => {
+export const possesser = (name: string): string => {
   const last = name[name.length - 1];
   return (last.toLowerCase() === 's')
     ? `${name}'`

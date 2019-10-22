@@ -4,6 +4,12 @@ class Role < ApplicationRecord
 
   has_many :users
 
+  def as_json(*)
+    {
+      name: name,
+    }
+  end
+
   def admin?
     name == Role::ADMIN
   end

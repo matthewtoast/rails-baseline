@@ -51,10 +51,20 @@ class SetupDatabase < ActiveRecord::Migration[6.0]
       t.uuid "role_id", null: false
       t.string "given_name", null: false
       t.string "family_name", null: false
+      t.string "picture_url"
       t.string "slug"
+      t.string "bio"
+      t.string "location"
       t.datetime "created_at", precision: 6, null: false
       t.datetime "updated_at", precision: 6, null: false
       t.index ["email"], name: "index_users_on_email", unique: true
+    end
+
+    create_table "friendships", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+      t.uuid "user_id", null: false
+      t.uuid "friend_id", null: false
+      t.datetime "created_at", precision: 6, null: false
+      t.datetime "updated_at", precision: 6, null: false
     end
 
     Role.create!(name: 'user')
