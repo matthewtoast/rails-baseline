@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html class='no-js' lang='en'>
   <head>
     <title><%= application_title %></title>
 
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name='description' content="<%= application_description %>">
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
 
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -28,12 +29,38 @@
       <% if user_signed_in? %>
         window.app.user = <%= raw current_user.to_json %>;
       <% end %>
+      window.app.assets = <%= raw asset_dictionary.to_json %>;
       console.info(window.app);
     </script>
 
     <%= javascript_pack_tag 'application' %>
   </head>
+
   <body>
+    <!--[if IE]>
+      <p class="browser-upgrade">
+        Please <a href="https://browsehappy.com/">upgrade your browser</a>
+        to improve your experience and security.
+      </p>
+    <![endif]-->
+
     <%= yield %>
+
+    <% if ENV['GOOGLE_ANALYTICS_ID'].present? %>
+      <script>
+        window.ga = function () {
+          ga.q.push(arguments);
+        };
+        ga.q = [];
+        ga.l = +new Date;
+        ga('create', '<%= ENV['GOOGLE_ANALYTICS_ID'] %>', 'auto');
+        ga('set', 'transport', 'beacon');
+        ga('send', 'pageview');
+      </script>
+      <script
+        src="https://www.google-analytics.com/analytics.js"
+        async>
+      </script>
+    <% end %>
   </body>
 </html>

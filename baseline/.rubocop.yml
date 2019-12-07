@@ -36,11 +36,11 @@ Layout/EmptyLineAfterGuardClause:
   Enabled: false
 Style/WhileUntilModifier:
   Enabled: false
-Layout/AlignArguments:
+Layout/ArgumentAlignment:
   Enabled: false
 Style/SymbolArray:
   Enabled: false
-Layout/IndentFirstArrayElement:
+Layout/FirstArrayElementIndentation:
   Enabled: false
 Style/IfUnlessModifier:
   Enabled: false
@@ -48,9 +48,9 @@ Style/RescueStandardError:
   Enabled: false
 Style/GuardClause:
   Enabled: false
-Naming/UncommunicativeMethodParamName:
+Naming/MethodParameterName:
   Enabled: false
-Layout/IndentFirstHashElement:
+Layout/FirstHashElementIndentation:
   Enabled: false
 Layout/MultilineMethodCallIndentation:
   Enabled: false

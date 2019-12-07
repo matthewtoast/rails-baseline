@@ -15,16 +15,25 @@ Before you run rsync, I **strongly** recommend you `git commit` your target Rail
 After running rsync, you must do some housekeeping to ensure the pieces in the Rails project are connected:
 
 ```
-$ bundle
+# --- Check Git diff of Gemfile; ensure latest versions are used ---
+$ bundle update
+# --- Check Git diff of package.json; ensure latest versions are used ---
 $ yarn install
 $ yarn lint
+$ yarn typecheck
 $ yarn test
 $ rubocop
 # --- Fill in all the missing values in the .env file ---
 $ rails db:setup
 $ rails db:migrate
 $ rails test
+$ rails s
+# --- Don't forget to update your favicon ---
 ```
+
+## Google Cloud
+
+The `.env` file has entries for credentials for Google OAuth. To get these, go to the Google Cloud Platform console. Create a new project. Use the top-left navigation menu to find "APIs & Services". Go to "OAuth consent screen" and fill in an application name and authorized domains. Go to "Credentials" to create an OAuth client ID. Under "Authorized JavaScript origins" add your domains (don't forget `http://localhost:3000`). Under "Authorized redirect URIs" add the full callback URIs (don't forget `http://localhost:3000/users/auth/google_oauth2/callback`). Hit save. Grab the client ID and client secret and assign them in the `.env` file.
 
 ## License
 

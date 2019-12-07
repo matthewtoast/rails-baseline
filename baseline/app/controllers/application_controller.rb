@@ -1,6 +1,15 @@
 # frozen_string_literal: true
 
 class ApplicationController < ActionController::Base
+  rescue_from RailsParam::Param::InvalidParameterError, with: :invalid_parameter
+
+  def invalid_parameter(exception)
+    render json: {
+      status: 400,
+      message: exception.message,
+    }, status: 400
+  end
+
   def authenticate_api_token!
     token = http_auth_header
 

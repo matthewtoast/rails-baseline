@@ -32,6 +32,7 @@ class SetupDatabase < ActiveRecord::Migration[6.0]
 
     create_table "taggings", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
       t.uuid "tag_id", null: false
+      t.uuid "tagger_id", null: false
       t.uuid "taggable_id", null: false
       t.string "taggable_type", null: false
       t.datetime "created_at", precision: 6, null: false

@@ -14,7 +14,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
     user.save!
     sign_in user
-    redirect_to root_path
+    redirect_to request.env['omniauth.origin'] || root_path
   end
 end
 
