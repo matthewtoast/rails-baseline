@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html class='no-js' lang='en'>
+<html lang='en'>
   <head>
     <title><%= application_title %></title>
 
     <meta name='description' content="<%= application_description %>">
+
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
 
@@ -30,9 +31,9 @@
         window.app.user = <%= raw current_user.to_json %>;
       <% end %>
       window.app.assets = <%= raw asset_dictionary.to_json %>;
-      console.info(window.app);
     </script>
 
+    <%= javascript_pack_tag 'analytics' %>
     <%= javascript_pack_tag 'application' %>
   </head>
 

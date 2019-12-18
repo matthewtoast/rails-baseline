@@ -8,7 +8,7 @@ AllCops:
     - 'config/spring.rb'
     - 'db/seeds.rb'
     - 'db/schema.rb'
-    - 'db/migrate/0*.rb'
+    - 'db/migrate/0_*.rb'
 
 Metrics/LineLength:
   Max: 200
@@ -56,3 +56,11 @@ Layout/MultilineMethodCallIndentation:
   Enabled: false
 Metrics/ParameterLists:
   Max: 10
+Style/RescueModifier:
+  Enabled: false
+Naming/RescuedExceptionsVariableName:
+  Enabled: false
+Metrics/PerceivedComplexity:
+  Enabled: false
+Metrics/CyclomaticComplexity:
+  Enabled: false

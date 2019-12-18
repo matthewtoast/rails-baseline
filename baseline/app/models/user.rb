@@ -31,7 +31,6 @@ class User < ApplicationRecord
   def full_name
     "#{given_name} #{family_name}"
   end
-
   alias slug_source full_name
 
   def admin?

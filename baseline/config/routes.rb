@@ -6,6 +6,6 @@ Rails.application.routes.draw do
     omniauth_callbacks: :omniauth_callbacks,
   }
   root to: 'home#index'
-  get '/logout', to: 'home#logout'
-  get '/account', to: 'users#account'
+  get '/account', to: 'accounts#show'
+  get '/accounts/logout', to: 'accounts#logout'
 end

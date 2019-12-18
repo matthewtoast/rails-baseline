@@ -15,10 +15,14 @@ module ApplicationHelper
     ENV['APPLICATION_DESCRIPTION']
   end
 
-  def react_main
+  def application_heading
+    "#{application_title} | #{application_description}"
+  end
+
+  def react_main(props = {})
     react_component(
       'Main.Main',
-      {},
+      props,
       class: 'main',
     )
   end

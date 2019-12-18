@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 class UsersController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: [:show, :logout]
 
-  def account
+  def show
     respond_to do |format|
       format.html
       format.json do
@@ -18,5 +18,11 @@ class UsersController < ApplicationController
         end
       end
     end
+  end
+
+  # GET /logout
+  def logout
+    reset_session
+    redirect_to '/'
   end
 end

@@ -1,4 +1,4 @@
-class SetupDatabase < ActiveRecord::Migration[6.0]
+class EstablishSchema < ActiveRecord::Migration[6.0]
   def change
     enable_extension "pg_trgm"
     enable_extension "pgcrypto"
@@ -68,8 +68,13 @@ class SetupDatabase < ActiveRecord::Migration[6.0]
       t.datetime "updated_at", precision: 6, null: false
     end
 
-    Role.create!(name: 'user')
-    Role.create!(name: 'admin')
-    # User.create!([])
+    create_table "votes", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+      t.uuid "voter_id", null: false
+      t.string "votable_type", null: false
+      t.uuid "votable_id", null: false
+      t.string "kind", null: false
+      t.datetime "created_at", precision: 6, null: false
+      t.datetime "updated_at", precision: 6, null: false
+    end
   end
 end
