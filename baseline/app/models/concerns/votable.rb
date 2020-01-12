@@ -5,7 +5,7 @@ module Votable
     has_many :votes, as: :votable
   end
 
-  VALID_VOTE_KINDS = %w(up down)
+  VALID_VOTE_KINDS = %w(up down).freeze
 
   def vote!(user_id, kind)
     unless VALID_VOTE_KINDS.include?(kind)

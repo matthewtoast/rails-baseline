@@ -31,14 +31,13 @@ class Mailg
     Rails.env.production? ? body_text : "[recipient: #{recipient_email}]\n#{body_text}"
   end
 
-  def get_domain
+  def domain
     Rails.env.production? ? PROD_DOMAIN : SANDBOX_DOMAIN
   end
 
   def send_email(recipient_email, subject_line, body_text)
     params = get_params(recipient_email, subject_line, body_text)
-    domain = get_domain
-    if !Rails.env.test?
+    unless Rails.env.test?
       puts "[mailgun email] (#{domain}) #{params[:to]} #{params[:subject_line]}"
       @client.send_message(domain, params)
     end

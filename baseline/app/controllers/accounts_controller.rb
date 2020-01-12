@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class UsersController < ApplicationController
+class AccountsController < ApplicationController
   before_action :authenticate_user!, except: [:show, :logout]
 
   def show
@@ -20,7 +20,6 @@ class UsersController < ApplicationController
     end
   end
 
-  # GET /logout
   def logout
     reset_session
     redirect_to '/'

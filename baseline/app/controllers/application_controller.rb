@@ -35,10 +35,10 @@ class ApplicationController < ActionController::Base
 
   def request_origin
     if request.host == 'localhost'
-       "#{request.protocol}#{request.host_with_port}"
-     else
-       "#{request.protocol}#{request.host}"
-     end
+      "#{request.protocol}#{request.host_with_port}"
+    else
+      "#{request.protocol}#{request.host}"
+    end
   end
 
   protected

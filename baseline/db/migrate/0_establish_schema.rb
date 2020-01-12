@@ -76,5 +76,15 @@ class EstablishSchema < ActiveRecord::Migration[6.0]
       t.datetime "created_at", precision: 6, null: false
       t.datetime "updated_at", precision: 6, null: false
     end
+
+    create_table "comments", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+      t.uuid "commenter_id", null: false
+      t.string "commentable_type", null: false
+      t.uuid "commentable_id", null: false
+      t.uuid "parent_id", null: false
+      t.text "text"
+      t.datetime "created_at", precision: 6, null: false
+      t.datetime "updated_at", precision: 6, null: false
+    end
   end
 end

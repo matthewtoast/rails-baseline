@@ -5,7 +5,7 @@ class GcsClient
   BUCKET = ENV['GCS_BUCKET']
   PROJECT_ID = ENV['GCS_PROJECT_ID']
   CREDENTIALS = ENV['GCS_CREDS'].present? ? GcsClient.decode_creds(ENV['GCS_CREDS']) : {}
-  DEFAULT_ACL = 'public-read'
+  DEFAULT_ACL = 'public-read'.freeze
   MAX_FILE_SIZE_MB = 2
 
   def initialize

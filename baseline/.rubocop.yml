@@ -64,3 +64,5 @@ Metrics/PerceivedComplexity:
   Enabled: false
 Metrics/CyclomaticComplexity:
   Enabled: false
+Style/PercentLiteralDelimiters:
+  Enabled: false
